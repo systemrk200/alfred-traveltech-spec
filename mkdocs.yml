@@ -1,0 +1,57 @@
+site_name: Alfred TravelTech Spec
+site_description: Системная спецификация мониторинга рейсов и актуализации плана поездки
+
+# Адрес сайта задавать не требуется: ссылки в собранной документации относительные.
+theme:
+  name: material
+  language: ru
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Тёмная тема
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Светлая тема
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  icon:
+    logo: material/airplane
+
+nav:
+  - Бизнес-контекст: index.md
+  - Функциональные требования: 02-functional-requirements.md
+  - Модели процессов: 03-process-models.md
+  - Архитектура и API: 04-architecture-api.md
+  - Модель данных: 05-data-model.md
+  - NFR и System Design: 06-nfr-system-design.md
+  - Решения и проверка: 07-decisions-verification.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
